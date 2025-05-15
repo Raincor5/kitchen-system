@@ -1,0 +1,7 @@
+theme: jekyll-theme-cayman
+title: Kitchen Management System
+description: A comprehensive solution for professional kitchen management
+baseurl: /kitchen-system
+url: https://raincor5.github.io
+include:
+  - "docs" 
