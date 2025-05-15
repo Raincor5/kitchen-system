@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kitchen Manager API Documentation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding-top: 56px;
+            line-height: 1.6;
+        }
+        .header {
+            background: linear-gradient(135deg, #3498db, #8e44ad);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        .section {
+            padding: 60px 0;
+        }
+        .endpoint {
+            margin-bottom: 30px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .method {
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-right: 10px;
+        }
+        .get {
+            background-color: #61affe;
+            color: white;
+        }
+        .post {
+            background-color: #49cc90;
+            color: white;
+        }
+        .put {
+            background-color: #fca130;
+            color: white;
+        }
+        .delete {
+            background-color: #f93e3e;
+            color: white;
+        }
+        pre {
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .nav-pills .nav-link.active {
+            background-color: #3498db;
+        }
+        .sticky-top {
+            top: 70px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="../../">Kitchen Management System</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../#features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../#components">Components</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../#docs">Documentation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://github.com/Raincor5/kitchen-system">GitHub</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1>Kitchen Manager API</h1>
+            <p class="lead">RESTful API documentation for label generation, printing, and kitchen management</p>
+        </div>
+    </header>
+
+    <!-- API Documentation -->
+    <div class="container mt-5">
+        <div class="row">
+            <!-- Sidebar Navigation -->
+            <div class="col-lg-3">
+                <div class="sticky-top">
+                    <div class="card">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="mb-0">API Endpoints</h5>
+                        </div>
+                        <div class="card-body">
+                            <nav class="nav flex-column nav-pills">
+                                <a class="nav-link active" href="#overview">Overview</a>
+                                <a class="nav-link" href="#authentication">Authentication</a>
+                                <a class="nav-link" href="#labels">Labels</a>
+                                <a class="nav-link" href="#printer">Printer</a>
+                                <a class="nav-link" href="#prep-tracking">Prep Tracking</a>
+                                <a class="nav-link" href="#gastronorm">Gastronorm</a>
+                                <a class="nav-link" href="#errors">Error Handling</a>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="col-lg-9">
+                <!-- Overview Section -->
+                <section id="overview" class="mb-5">
+                    <h2>Overview</h2>
+                    <p>The Kitchen Manager API provides endpoints for label generation, printing, preparation tracking, and gastronorm tray management. The API is RESTful and returns data in JSON format.</p>
+                    
+                    <h4>Base URL</h4>
+                    <div class="bg-light p-3 rounded">
+                        <code>https://api.kitchen-manager.example.com/v1</code>
+                    </div>
+                    
+                    <h4 class="mt-4">Response Format</h4>
+                    <p>All responses are returned in JSON format with the following structure:</p>
+                    <pre><code class="language-json">{
+  "status": "success",
+  "data": { ... },
+  "message": "Operation successful"
+}</code></pre>
+                    
+                    <h4 class="mt-4">HTTP Status Codes</h4>
+                    <ul>
+                        <li><strong>200 OK</strong> - The request was successful</li>
+                        <li><strong>201 Created</strong> - The resource was successfully created</li>
+                        <li><strong>400 Bad Request</strong> - The request was invalid</li>
+                        <li><strong>401 Unauthorized</strong> - Authentication failed</li>
+                        <li><strong>403 Forbidden</strong> - The client does not have permission</li>
+                        <li><strong>404 Not Found</strong> - The resource was not found</li>
+                        <li><strong>500 Internal Server Error</strong> - An error occurred on the server</li>
+                    </ul>
+                </section>
+
+                <!-- Authentication Section -->
+                <section id="authentication" class="mb-5">
+                    <h2>Authentication</h2>
+                    <p>The API uses API keys for authentication. Include your API key in the header of each request:</p>
+                    <pre><code class="language-bash">Authorization: Bearer YOUR_API_KEY</code></pre>
+                    
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle"></i> Contact the administrator to get an API key for your application.
+                    </div>
+                </section>
+
+                <!-- Labels Section -->
+                <section id="labels" class="mb-5">
+                    <h2>Labels</h2>
+                    <p>Endpoints for label generation and management.</p>
+                    
+                    <div class="endpoint">
+                        <span class="method post">POST</span>
+                        <code>/labels/generate</code>
+                        <p>Generate labels from label data</p>
+                        
+                        <h5>Request Body</h5>
+                        <pre><code class="language-json">{
+  "template": "standard",
+  "data": {
+    "product_name": "Chicken Curry",
+    "batch_number": "B12345",
+    "employee_name": "John Doe",
+    "preparation_date": "2025-05-15",
+    "use_by_date": "2025-05-18"
+  }
+}</code></pre>
+                        
+                        <h5>Response</h5>
+                        <pre><code class="language-json">{
+  "status": "success",
+  "data": {
+    "label_id": "l-12345",
+    "label_url": "https://api.kitchen-manager.example.com/v1/labels/l-12345.pdf",
+    "qr_code": "https://api.kitchen-manager.example.com/v1/labels/l-12345/qr"
+  },
+  "message": "Label generated successfully"
+}</code></pre>
+                    </div>
+                    
+                    <div class="endpoint">
+                        <span class="method post">POST</span>
+                        <code>/labels/print</code>
+                        <p>Print labels</p>
+                        
+                        <h5>Request Body</h5>
+                        <pre><code class="language-json">{
+  "label_id": "l-12345",
+  "printer_id": "p-789",
+  "copies": 1
+}</code></pre>
+                        
+                        <h5>Response</h5>
+                        <pre><code class="language-json">{
+  "status": "success",
+  "data": {
+    "print_job_id": "pj-456",
+    "status": "printing"
+  },
+  "message": "Print job created successfully"
+}</code></pre>
+                    </div>
+                    
+                    <div class="endpoint">
+                        <span class="method get">GET</span>
+                        <code>/labels/{label_id}</code>
+                        <p>Get a specific label by ID</p>
+                        
+                        <h5>Response</h5>
+                        <pre><code class="language-json">{
+  "status": "success",
+  "data": {
+    "label_id": "l-12345",
+    "template": "standard",
+    "data": {
+      "product_name": "Chicken Curry",
+      "batch_number": "B12345",
+      "employee_name": "John Doe",
+      "preparation_date": "2025-05-15",
+      "use_by_date": "2025-05-18"
+    },
+    "created_at": "2025-05-15T10:30:00Z"
+  },
+  "message": "Label retrieved successfully"
+}</code></pre>
+                    </div>
+                </section>
+
+                <!-- Printer Section -->
+                <section id="printer" class="mb-5">
+                    <h2>Printer</h2>
+                    <p>Endpoints for printer operations.</p>
+                    
+                    <div class="endpoint">
+                        <span class="method get">GET</span>
+                        <code>/printers</code>
+                        <p>Get all printers</p>
+                        
+                        <h5>Response</h5>
+                        <pre><code class="language-json">{
+  "status": "success",
+  "data": {
+    "printers": [
+      {
+        "printer_id": "p-789",
+        "name": "Kitchen Printer 1",
+        "ip_address": "192.168.1.100",
+        "status": "online"
+      },
+      {
+        "printer_id": "p-790",
+        "name": "Kitchen Printer 2",
+        "ip_address": "192.168.1.101",
+        "status": "offline"
+      }
+    ]
+  },
+  "message": "Printers retrieved successfully"
+}</code></pre>
+                    </div>
+                    
+                    <div class="endpoint">
+                        <span class="method get">GET</span>
+                        <code>/printers/{printer_id}/status</code>
+                        <p>Get printer status</p>
+                        
+                        <h5>Response</h5>
+                        <pre><code class="language-json">{
+  "status": "success",
+  "data": {
+    "printer_id": "p-789",
+    "name": "Kitchen Printer 1",
+    "status": "online",
+    "paper_level": "ok",
+    "ink_level": "low",
+    "queued_jobs": 2
+  },
+  "message": "Printer status retrieved successfully"
+}</code></pre>
+                    </div>
+                </section>
+
+                <!-- Prep Tracking Section -->
+                <section id="prep-tracking" class="mb-5">
+                    <h2>Prep Tracking</h2>
+                    <p>Endpoints for preparation tracking.</p>
+                    
+                    <div class="endpoint">
+                        <span class="method get">GET</span>
+                        <code>/prep-tracking/items</code>
+                        <p>Get all preparation items</p>
+                        
+                        <h5>Response</h5>
+                        <pre><code class="language-json">{
+  "status": "success",
+  "data": {
+    "items": [
+      {
+        "item_id": "pt-123",
+        "name": "Chicken Curry",
+        "status": "in_progress",
+        "assigned_to": "John Doe",
+        "started_at": "2025-05-15T09:30:00Z",
+        "estimated_completion": "2025-05-15T10:30:00Z"
+      },
+      {
+        "item_id": "pt-124",
+        "name": "Rice",
+        "status": "completed",
+        "assigned_to": "Jane Smith",
+        "started_at": "2025-05-15T09:00:00Z",
+        "completed_at": "2025-05-15T09:45:00Z"
+      }
+    ]
+  },
+  "message": "Preparation items retrieved successfully"
+}</code></pre>
+                    </div>
+                    
+                    <div class="endpoint">
+                        <span class="method post">POST</span>
+                        <code>/prep-tracking/items</code>
+                        <p>Create a new preparation item</p>
+                        
+                        <h5>Request Body</h5>
+                        <pre><code class="language-json">{
+  "name": "Vegetable Stir Fry",
+  "assigned_to": "Jane Smith",
+  "estimated_duration": 45,
+  "recipe_id": "r-456"
+}</code></pre>
+                        
+                        <h5>Response</h5>
+                        <pre><code class="language-json">{
+  "status": "success",
+  "data": {
+    "item_id": "pt-125",
+    "name": "Vegetable Stir Fry",
+    "status": "pending",
+    "assigned_to": "Jane Smith",
+    "estimated_duration": 45,
+    "recipe_id": "r-456"
+  },
+  "message": "Preparation item created successfully"
+}</code></pre>
+                    </div>
+                </section>
+
+                <!-- Gastronorm Section -->
+                <section id="gastronorm" class="mb-5">
+                    <h2>Gastronorm</h2>
+                    <p>Endpoints for gastronorm tray management.</p>
+                    
+                    <div class="endpoint">
+                        <span class="method get">GET</span>
+                        <code>/gastronorm/trays</code>
+                        <p>Get all gastronorm trays</p>
+                        
+                        <h5>Response</h5>
+                        <pre><code class="language-json">{
+  "status": "success",
+  "data": {
+    "trays": [
+      {
+        "tray_id": "gn-123",
+        "size": "1/1",
+        "contents": "Chicken Curry",
+        "location": "Fridge 2",
+        "preparation_date": "2025-05-15",
+        "use_by_date": "2025-05-18",
+        "qr_code": "https://api.kitchen-manager.example.com/v1/gastronorm/trays/gn-123/qr"
+      },
+      {
+        "tray_id": "gn-124",
+        "size": "1/2",
+        "contents": "Rice",
+        "location": "Fridge 1",
+        "preparation_date": "2025-05-15",
+        "use_by_date": "2025-05-17",
+        "qr_code": "https://api.kitchen-manager.example.com/v1/gastronorm/trays/gn-124/qr"
+      }
+    ]
+  },
+  "message": "Gastronorm trays retrieved successfully"
+}</code></pre>
+                    </div>
+                    
+                    <div class="endpoint">
+                        <span class="method post">POST</span>
+                        <code>/gastronorm/trays</code>
+                        <p>Create a new gastronorm tray</p>
+                        
+                        <h5>Request Body</h5>
+                        <pre><code class="language-json">{
+  "size": "1/3",
+  "contents": "Vegetable Stir Fry",
+  "location": "Fridge 3",
+  "preparation_date": "2025-05-15",
+  "use_by_date": "2025-05-19"
+}</code></pre>
+                        
+                        <h5>Response</h5>
+                        <pre><code class="language-json">{
+  "status": "success",
+  "data": {
+    "tray_id": "gn-125",
+    "size": "1/3",
+    "contents": "Vegetable Stir Fry",
+    "location": "Fridge 3",
+    "preparation_date": "2025-05-15",
+    "use_by_date": "2025-05-19",
+    "qr_code": "https://api.kitchen-manager.example.com/v1/gastronorm/trays/gn-125/qr"
+  },
+  "message": "Gastronorm tray created successfully"
+}</code></pre>
+                    </div>
+                </section>
+
+                <!-- Error Handling Section -->
+                <section id="errors" class="mb-5">
+                    <h2>Error Handling</h2>
+                    <p>When an error occurs, the API returns a JSON response with the following structure:</p>
+                    <pre><code class="language-json">{
+  "status": "error",
+  "error": {
+    "code": "validation_error",
+    "message": "Invalid request parameters",
+    "details": {
+      "product_name": "This field is required"
+    }
+  }
+}</code></pre>
+                    
+                    <h4 class="mt-4">Common Error Codes</h4>
+                    <ul>
+                        <li><strong>validation_error</strong> - Invalid request parameters</li>
+                        <li><strong>authentication_error</strong> - Authentication failed</li>
+                        <li><strong>permission_error</strong> - The client does not have permission</li>
+                        <li><strong>not_found</strong> - The resource was not found</li>
+                        <li><strong>server_error</strong> - An error occurred on the server</li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Kitchen Management System</h5>
+                    <p>A comprehensive solution for professional kitchen management, food traceability, and intelligent label printing.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <h5>Contact</h5>
+                    <p>Raincor5 - slava.krot5@gmail.com</p>
+                    <div class="mt-3">
+                        <a href="https://github.com/Raincor5/kitchen-system" class="text-white me-3">
+                            <i class="fab fa-github fa-2x"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2025 Kitchen Management System. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelectorAll('pre code').forEach((el) => {
+                hljs.highlightElement(el);
+            });
+        });
+    </script>
+</body>
+</html> 

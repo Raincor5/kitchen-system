@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Upscaler API Documentation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding-top: 56px;
+            line-height: 1.6;
+        }
+        .header {
+            background: linear-gradient(135deg, #2ecc71, #1abc9c);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        .section {
+            padding: 60px 0;
+        }
+        .endpoint {
+            margin-bottom: 30px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .method {
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-right: 10px;
+        }
+        .get {
+            background-color: #61affe;
+            color: white;
+        }
+        .post {
+            background-color: #49cc90;
+            color: white;
+        }
+        .put {
+            background-color: #fca130;
+            color: white;
+        }
+        .delete {
+            background-color: #f93e3e;
+            color: white;
+        }
+        pre {
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .nav-pills .nav-link.active {
+            background-color: #2ecc71;
+        }
+        .sticky-top {
+            top: 70px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="../../">Kitchen Management System</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../#features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../#components">Components</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../#docs">Documentation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://github.com/Raincor5/kitchen-system">GitHub</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1>Recipe Upscaler API</h1>
+            <p class="lead">RESTful API documentation for intelligent recipe scaling and conversion</p>
+        </div>
+    </header>
+
+    <!-- API Documentation -->
+    <div class="container mt-5">
+        <div class="row">
+            <!-- Sidebar Navigation -->
+            <div class="col-lg-3">
+                <div class="sticky-top">
+                    <div class="card">
+                        <div class="card-header bg-success text-white">
+                            <h5 class="mb-0">API Endpoints</h5>
+                        </div>
+                        <div class="card-body">
+                            <nav class="nav flex-column nav-pills">
+                                <a class="nav-link active" href="#overview">Overview</a>
+                                <a class="nav-link" href="#authentication">Authentication</a>
+                                <a class="nav-link" href="#recipes">Recipes</a>
+                                <a class="nav-link" href="#scaling">Recipe Scaling</a>
+                                <a class="nav-link" href="#conversion">Unit Conversion</a>
+                                <a class="nav-link" href="#nutrition">Nutritional Analysis</a>
+                                <a class="nav-link" href="#errors">Error Handling</a>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="col-lg-9">
+                <!-- Overview Section -->
+                <section id="overview" class="mb-5">
+                    <h2>Overview</h2>
+                    <p>The Recipe Upscaler API provides endpoints for intelligent recipe scaling, unit conversion, and nutritional analysis. The API uses advanced algorithms to accurately scale ingredients while preserving the recipe's integrity.</p>
+                    
+                    <h4>Base URL</h4>
+                    <div class="bg-light p-3 rounded">
+                        <code>https://api.recipe-upscaler.example.com/v1</code>
+                    </div>
+                    
+                    <h4 class="mt-4">Response Format</h4>
+                    <p>All responses are returned in JSON format with the following structure:</p>
+                    <pre><code class="language-json">{
+  "status": "success",
+  "data": { ... },
+  "message": "Operation successful"
+}</code></pre>
+                    
+                    <h4 class="mt-4">HTTP Status Codes</h4>
+                    <ul>
+                        <li><strong>200 OK</strong> - The request was successful</li>
+                        <li><strong>201 Created</strong> - The resource was successfully created</li>
+                        <li><strong>400 Bad Request</strong> - The request was invalid</li>
+                        <li><strong>401 Unauthorized</strong> - Authentication failed</li>
+                        <li><strong>403 Forbidden</strong> - The client does not have permission</li>
+                        <li><strong>404 Not Found</strong> - The resource was not found</li>
+                        <li><strong>500 Internal Server Error</strong> - An error occurred on the server</li>
+                    </ul>
+                </section>
+
+                <!-- Authentication Section -->
+                <section id="authentication" class="mb-5">
+                    <h2>Authentication</h2>
+                    <p>The API uses API keys for authentication. Include your API key in the header of each request:</p>
+                    <pre><code class="language-bash">Authorization: Bearer YOUR_API_KEY</code></pre>
+                    
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle"></i> Contact the administrator to get an API key for your application.
+                    </div>
+                </section>
+
+                <!-- Recipes Section -->
+                <section id="recipes" class="mb-5">
+                    <h2>Recipes</h2>
+                    <p>Endpoints for recipe management.</p>
+                    
+                    <div class="endpoint">
+                        <span class="method post">POST</span>
+                        <code>/recipes</code>
+                        <p>Create a new recipe</p>
+                        
+                        <h5>Request Body</h5>
+                        <pre><code class="language-json">{
+  "name": "Classic Chocolate Cake",
+  "description": "A rich and moist chocolate cake",
+  "servings": 8,
+  "prepTime": 20,
+  "cookTime": 35,
+  "ingredients": [
+    {
+      "name": "all-purpose flour",
+      "amount": 2,
+      "unit": "cup"
+    },
+    {
+      "name": "granulated sugar",
+      "amount": 1.75,
+      "unit": "cup"
+    },
+    {
+      "name": "unsweetened cocoa powder",
+      "amount": 0.75,
+      "unit": "cup"
+    },
+    {
+      "name": "baking powder",
+      "amount": 1.5,
+      "unit": "teaspoon"
+    },
+    {
+      "name": "baking soda",
+      "amount": 1.5,
+      "unit": "teaspoon"
+    },
+    {
+      "name": "salt",
+      "amount": 1,
+      "unit": "teaspoon"
+    },
+    {
+      "name": "eggs",
+      "amount": 2,
+      "unit": "item"
+    },
+    {
+      "name": "milk",
+      "amount": 1,
+      "unit": "cup"
+    },
+    {
+      "name": "vegetable oil",
+      "amount": 0.5,
+      "unit": "cup"
+    },
+    {
+      "name": "vanilla extract",
+      "amount": 2,
+      "unit": "teaspoon"
+    },
+    {
+      "name": "boiling water",
+      "amount": 1,
+      "unit": "cup"
+    }
+  ],
+  "instructions": [
+    "Preheat oven to 350°F (175°C). Grease and flour two 9-inch round cake pans.",
+    "In a large bowl, combine flour, sugar, cocoa, baking powder, baking soda, and salt.",
+    "Add eggs, milk, oil, and vanilla. Mix for 2 minutes on medium speed.",
+    "Stir in boiling water (batter will be thin). Pour into prepared pans.",
+    "Bake for 30-35 minutes or until a toothpick inserted comes out clean.",
+    "Cool for 10 minutes before removing from pans to cool completely."
+  ],
+  "tags": ["dessert", "chocolate", "cake", "baking"]
+}</code></pre>
+                        
+                        <h5>Response</h5>
+                        <pre><code class="language-json">{
+  "status": "success",
+  "data": {
+    "recipe_id": "rec-123",
+    "name": "Classic Chocolate Cake",
+    "description": "A rich and moist chocolate cake",
+    "servings": 8,
+    "prepTime": 20,
+    "cookTime": 35,
+    "ingredients": [...],
+    "instructions": [...],
+    "tags": ["dessert", "chocolate", "cake", "baking"],
+    "created_at": "2025-05-15T10:30:00Z"
+  },
+  "message": "Recipe created successfully"
+}</code></pre>
+                    </div>
+                    
+                    <div class="endpoint">
+                        <span class="method get">GET</span>
+                        <code>/recipes/{recipe_id}</code>
+                        <p>Get a recipe by ID</p>
+                        
+                        <h5>Response</h5>
+                        <pre><code class="language-json">{
+  "status": "success",
+  "data": {
+    "recipe_id": "rec-123",
+    "name": "Classic Chocolate Cake",
+    "description": "A rich and moist chocolate cake",
+    "servings": 8,
+    "prepTime": 20,
+    "cookTime": 35,
+    "ingredients": [...],
+    "instructions": [...],
+    "tags": ["dessert", "chocolate", "cake", "baking"],
+    "created_at": "2025-05-15T10:30:00Z"
+  },
+  "message": "Recipe retrieved successfully"
+}</code></pre>
+                    </div>
+                </section>
+
+                <!-- Recipe Scaling Section -->
+                <section id="scaling" class="mb-5">
+                    <h2>Recipe Scaling</h2>
+                    <p>Endpoints for intelligent recipe scaling.</p>
+                    
+                    <div class="endpoint">
+                        <span class="method post">POST</span>
+                        <code>/recipes/{recipe_id}/scale</code>
+                        <p>Scale a recipe to a different number of servings</p>
+                        
+                        <h5>Request Body</h5>
+                        <pre><code class="language-json">{
+  "target_servings": 16,
+  "scaling_method": "linear",
+  "round_to_fractions": true,
+  "adjust_instructions": true
+}</code></pre>
+                        
+                        <h5>Response</h5>
+                        <pre><code class="language-json">{
+  "status": "success",
+  "data": {
+    "recipe_id": "rec-123",
+    "name": "Classic Chocolate Cake (Scaled)",
+    "description": "A rich and moist chocolate cake",
+    "original_servings": 8,
+    "target_servings": 16,
+    "original_ingredients": [...],
+    "scaled_ingredients": [
+      {
+        "name": "all-purpose flour",
+        "amount": 4,
+        "unit": "cup"
+      },
+      {
+        "name": "granulated sugar",
+        "amount": 3.5,
+        "unit": "cup"
+      },
+      {
+        "name": "unsweetened cocoa powder",
+        "amount": 1.5,
+        "unit": "cup"
+      },
+      {
+        "name": "baking powder",
+        "amount": 1,
+        "unit": "tablespoon"
+      },
+      {
+        "name": "baking soda",
+        "amount": 1,
+        "unit": "tablespoon"
+      },
+      {
+        "name": "salt",
+        "amount": 2,
+        "unit": "teaspoon"
+      },
+      {
+        "name": "eggs",
+        "amount": 4,
+        "unit": "item"
+      },
+      {
+        "name": "milk",
+        "amount": 2,
+        "unit": "cup"
+      },
+      {
+        "name": "vegetable oil",
+        "amount": 1,
+        "unit": "cup"
+      },
+      {
+        "name": "vanilla extract",
+        "amount": 4,
+        "unit": "teaspoon"
+      },
+      {
+        "name": "boiling water",
+        "amount": 2,
+        "unit": "cup"
+      }
+    ],
+    "adjusted_instructions": [
+      "Preheat oven to 350°F (175°C). Grease and flour four 9-inch round cake pans.",
+      "In a large bowl, combine flour, sugar, cocoa, baking powder, baking soda, and salt.",
+      "Add eggs, milk, oil, and vanilla. Mix for 2 minutes on medium speed.",
+      "Stir in boiling water (batter will be thin). Pour into prepared pans.",
+      "Bake for 30-35 minutes or until a toothpick inserted comes out clean.",
+      "Cool for 10 minutes before removing from pans to cool completely."
+    ]
+  },
+  "message": "Recipe scaled successfully"
+}</code></pre>
+                    </div>
+                    
+                    <div class="endpoint">
+                        <span class="method post">POST</span>
+                        <code>/recipes/scale</code>
+                        <p>Scale a recipe without saving it</p>
+                        
+                        <h5>Request Body</h5>
+                        <pre><code class="language-json">{
+  "recipe": {
+    "name": "Simple Pasta Sauce",
+    "servings": 4,
+    "ingredients": [
+      {
+        "name": "olive oil",
+        "amount": 2,
+        "unit": "tablespoon"
+      },
+      {
+        "name": "garlic cloves",
+        "amount": 3,
+        "unit": "item"
+      },
+      {
+        "name": "canned tomatoes",
+        "amount": 28,
+        "unit": "ounce"
+      },
+      {
+        "name": "basil leaves",
+        "amount": 5,
+        "unit": "item"
+      },
+      {
+        "name": "salt",
+        "amount": 1,
+        "unit": "teaspoon"
+      }
+    ]
+  },
+  "target_servings": 10,
+  "scaling_method": "linear",
+  "round_to_fractions": true
+}</code></pre>
+                        
+                        <h5>Response</h5>
+                        <pre><code class="language-json">{
+  "status": "success",
+  "data": {
+    "original_servings": 4,
+    "target_servings": 10,
+    "scaled_ingredients": [
+      {
+        "name": "olive oil",
+        "amount": 5,
+        "unit": "tablespoon"
+      },
+      {
+        "name": "garlic cloves",
+        "amount": 7.5,
+        "unit": "item",
+        "display": "7-8"
+      },
+      {
+        "name": "canned tomatoes",
+        "amount": 70,
+        "unit": "ounce",
+        "display": "two 28oz cans + one 14oz can"
+      },
+      {
+        "name": "basil leaves",
+        "amount": 12.5,
+        "unit": "item",
+        "display": "12-13"
+      },
+      {
+        "name": "salt",
+        "amount": 2.5,
+        "unit": "teaspoon"
+      }
+    ]
+  },
+  "message": "Recipe scaled successfully"
+}</code></pre>
+                    </div>
+                </section>
+
+                <!-- Unit Conversion Section -->
+                <section id="conversion" class="mb-5">
+                    <h2>Unit Conversion</h2>
+                    <p>Endpoints for unit conversion in recipes.</p>
+                    
+                    <div class="endpoint">
+                        <span class="method post">POST</span>
+                        <code>/recipes/{recipe_id}/convert</code>
+                        <p>Convert recipe units to a different system (metric/imperial)</p>
+                        
+                        <h5>Request Body</h5>
+                        <pre><code class="language-json">{
+  "target_system": "metric",
+  "round_to_nearest": true,
+  "preferred_units": {
+    "volume": ["ml", "l"],
+    "weight": ["g", "kg"],
+    "temperature": "celsius"
+  }
+}</code></pre>
+                        
+                        <h5>Response</h5>
+                        <pre><code class="language-json">{
+  "status": "success",
+  "data": {
+    "recipe_id": "rec-123",
+    "name": "Classic Chocolate Cake (Metric)",
+    "description": "A rich and moist chocolate cake",
+    "servings": 8,
+    "original_ingredients": [...],
+    "converted_ingredients": [
+      {
+        "name": "all-purpose flour",
+        "amount": 240,
+        "unit": "g"
+      },
+      {
+        "name": "granulated sugar",
+        "amount": 350,
+        "unit": "g"
+      },
+      {
+        "name": "unsweetened cocoa powder",
+        "amount": 90,
+        "unit": "g"
+      },
+      {
+        "name": "baking powder",
+        "amount": 7.5,
+        "unit": "g"
+      },
+      {
+        "name": "baking soda",
+        "amount": 7.5,
+        "unit": "g"
+      },
+      {
+        "name": "salt",
+        "amount": 5,
+        "unit": "g"
+      },
+      {
+        "name": "eggs",
+        "amount": 2,
+        "unit": "item"
+      },
+      {
+        "name": "milk",
+        "amount": 240,
+        "unit": "ml"
+      },
+      {
+        "name": "vegetable oil",
+        "amount": 120,
+        "unit": "ml"
+      },
+      {
+        "name": "vanilla extract",
+        "amount": 10,
+        "unit": "ml"
+      },
+      {
+        "name": "boiling water",
+        "amount": 240,
+        "unit": "ml"
+      }
+    ],
+    "converted_instructions": [
+      "Preheat oven to 180°C. Grease and flour two 23cm round cake pans.",
+      "In a large bowl, combine flour, sugar, cocoa, baking powder, baking soda, and salt.",
+      "Add eggs, milk, oil, and vanilla. Mix for 2 minutes on medium speed.",
+      "Stir in boiling water (batter will be thin). Pour into prepared pans.",
+      "Bake for 30-35 minutes or until a toothpick inserted comes out clean.",
+      "Cool for 10 minutes before removing from pans to cool completely."
+    ]
+  },
+  "message": "Recipe units converted successfully"
+}</code></pre>
+                    </div>
+                    
+                    <div class="endpoint">
+                        <span class="method post">POST</span>
+                        <code>/conversion</code>
+                        <p>Convert between specific units</p>
+                        
+                        <h5>Request Body</h5>
+                        <pre><code class="language-json">{
+  "conversions": [
+    {
+      "amount": 2,
+      "from_unit": "cup",
+      "to_unit": "ml"
+    },
+    {
+      "amount": 16,
+      "from_unit": "ounce",
+      "to_unit": "g"
+    },
+    {
+      "amount": 350,
+      "from_unit": "fahrenheit",
+      "to_unit": "celsius"
+    }
+  ]
+}</code></pre>
+                        
+                        <h5>Response</h5>
+                        <pre><code class="language-json">{
+  "status": "success",
+  "data": {
+    "conversions": [
+      {
+        "original": {
+          "amount": 2,
+          "unit": "cup"
+        },
+        "converted": {
+          "amount": 480,
+          "unit": "ml"
+        }
+      },
+      {
+        "original": {
+          "amount": 16,
+          "unit": "ounce"
+        },
+        "converted": {
+          "amount": 454,
+          "unit": "g"
+        }
+      },
+      {
+        "original": {
+          "amount": 350,
+          "unit": "fahrenheit"
+        },
+        "converted": {
+          "amount": 177,
+          "unit": "celsius"
+        }
+      }
+    ]
+  },
+  "message": "Units converted successfully"
+}</code></pre>
+                    </div>
+                </section>
+
+                <!-- Nutritional Analysis Section -->
+                <section id="nutrition" class="mb-5">
+                    <h2>Nutritional Analysis</h2>
+                    <p>Endpoints for nutritional analysis of recipes.</p>
+                    
+                    <div class="endpoint">
+                        <span class="method post">POST</span>
+                        <code>/recipes/{recipe_id}/nutrition</code>
+                        <p>Get nutritional information for a recipe</p>
+                        
+                        <h5>Request Body</h5>
+                        <pre><code class="language-json">{
+  "per_serving": true,
+  "detailed": true
+}</code></pre>
+                        
+                        <h5>Response</h5>
+                        <pre><code class="language-json">{
+  "status": "success",
+  "data": {
+    "recipe_id": "rec-123",
+    "name": "Classic Chocolate Cake",
+    "servings": 8,
+    "total_nutrition": {
+      "calories": 4800,
+      "fat": 168,
+      "fat_unit": "g",
+      "saturated_fat": 24,
+      "saturated_fat_unit": "g",
+      "carbohydrates": 720,
+      "carbohydrates_unit": "g",
+      "sugar": 440,
+      "sugar_unit": "g",
+      "protein": 64,
+      "protein_unit": "g",
+      "fiber": 24,
+      "fiber_unit": "g",
+      "sodium": 3200,
+      "sodium_unit": "mg"
+    },
+    "per_serving": {
+      "calories": 600,
+      "fat": 21,
+      "fat_unit": "g",
+      "saturated_fat": 3,
+      "saturated_fat_unit": "g",
+      "carbohydrates": 90,
+      "carbohydrates_unit": "g",
+      "sugar": 55,
+      "sugar_unit": "g",
+      "protein": 8,
+      "protein_unit": "g",
+      "fiber": 3,
+      "fiber_unit": "g",
+      "sodium": 400,
+      "sodium_unit": "mg"
+    },
+    "ingredients_nutrition": [
+      {
+        "name": "all-purpose flour",
+        "amount": 2,
+        "unit": "cup",
+        "nutrition": {
+          "calories": 880,
+          "carbohydrates": 184,
+          "carbohydrates_unit": "g",
+          "protein": 24,
+          "protein_unit": "g",
+          "fiber": 8,
+          "fiber_unit": "g"
+        }
+      },
+      // Other ingredients...
+    ]
+  },
+  "message": "Nutritional analysis completed successfully"
+}</code></pre>
+                    </div>
+                </section>
+
+                <!-- Error Handling Section -->
+                <section id="errors" class="mb-5">
+                    <h2>Error Handling</h2>
+                    <p>When an error occurs, the API returns a JSON response with the following structure:</p>
+                    <pre><code class="language-json">{
+  "status": "error",
+  "error": {
+    "code": "validation_error",
+    "message": "Invalid request parameters",
+    "details": {
+      "target_servings": "Must be a positive number"
+    }
+  }
+}</code></pre>
+                    
+                    <h4 class="mt-4">Common Error Codes</h4>
+                    <ul>
+                        <li><strong>validation_error</strong> - Invalid request parameters</li>
+                        <li><strong>authentication_error</strong> - Authentication failed</li>
+                        <li><strong>permission_error</strong> - The client does not have permission</li>
+                        <li><strong>not_found</strong> - The resource was not found</li>
+                        <li><strong>conversion_error</strong> - Unable to convert between the specified units</li>
+                        <li><strong>scaling_error</strong> - Unable to scale the recipe</li>
+                        <li><strong>server_error</strong> - An error occurred on the server</li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Kitchen Management System</h5>
+                    <p>A comprehensive solution for professional kitchen management, food traceability, and intelligent recipe scaling.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <h5>Contact</h5>
+                    <p>Raincor5 - slava.krot5@gmail.com</p>
+                    <div class="mt-3">
+                        <a href="https://github.com/Raincor5/kitchen-system" class="text-white me-3">
+                            <i class="fab fa-github fa-2x"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2025 Kitchen Management System. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelectorAll('pre code').forEach((el) => {
+                hljs.highlightElement(el);
+            });
+        });
+    </script>
+</body>
+</html> 
