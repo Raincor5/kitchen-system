@@ -1,89 +1,76 @@
-# Kitchen Manager Label System
+# Kitchen Manager
 
-A comprehensive label generation and printing system for kitchen management, integrated with other kitchen management applications.
+Backend service for managing kitchen operations, label generation, and printing.
 
 ## Features
 
-- Generate labels for trays with detailed information
-- Print labels to physical label printers
-- Fetch data from other kitchen management applications:
-  - Prep Tracker: Dish and prep bag information
-  - Recipe Upscaler: Recipe and ingredient information
-  - Kitchen Manager: Tray information
-- Enhanced label generation with data from multiple sources
-- Batch label generation and printing
+- Label generation and printing
+- QR code generation for linking to digital systems
+- Image processing for label recognition
+- Integration with prep tracking system
+- REST API for mobile and web clients
 
-## Architecture
+## Setup
 
-The system consists of the following components:
+### Requirements
 
-1. **Label Generator Service**: Generates formatted labels based on tray data
-2. **Label Printer Service**: Handles the physical printing of labels
-3. **Data Fetcher Service**: Fetches data from other applications
-4. **API Endpoints**: RESTful API for label generation and printing
+- Python 3.8+
+- pip
+- ngrok for external access (optional)
 
-## Integration with Other Applications
+### Installation
 
-The system integrates with the following applications:
+1. Create a virtual environment:
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
 
-- **Prep Tracker**: Fetches dish and prep bag information
-- **Recipe Upscaler**: Fetches recipe and ingredient information
-- **Kitchen Manager**: Fetches tray information
+2. Install dependencies:
+```bash
+pip install -r backend/requirements.txt
+```
+
+3. Configure environment variables:
+```bash
+cp .env.example .env
+# Edit .env with your settings
+```
+
+4. Run the application:
+```bash
+cd backend
+python app/main.py
+```
 
 ## API Endpoints
 
-### Labels
+The service provides the following main endpoints:
 
-- `POST /api/labels/generate`: Generate labels from label data
-- `POST /api/labels/generate-enhanced/{tray_id}`: Generate an enhanced label with data from other applications
-- `POST /api/labels/generate-enhanced-batch`: Generate enhanced labels for multiple trays
-- `POST /api/labels/print`: Print labels
-- `POST /api/labels/print-enhanced/{tray_id}`: Generate and print an enhanced label
-- `POST /api/labels/print-enhanced-batch`: Generate and print enhanced labels for multiple trays
-- `GET /api/labels/printer/status`: Get printer status
+- `/api/labels`: Label management
+- `/api/printer`: Printer operations
+- `/api/prep-tracking`: Preparation tracking
+- `/api/gastronorm`: Gastronorm tray management
 
-### Trays
+## Scripts
 
-- `GET /api/trays`: Get all trays with optional filtering
-- `GET /api/trays/{tray_id}`: Get a specific tray by ID
-- `POST /api/trays`: Create a new tray
-- `PUT /api/trays/{tray_id}`: Update an existing tray
-- `DELETE /api/trays/{tray_id}`: Delete a tray
-- `POST /api/trays/batch`: Create multiple trays at once
+- `generate_qr_code.py`: Generate QR codes for linking physical items to digital records
+- `update_ngrok_urls.sh`: Update ngrok URLs for external access
+- `backend/verify_gastronorm_trays.py`: Verify gastronorm tray data
 
-## Installation
+## Development
 
-1. Clone the repository
-2. Install dependencies:
-   ```
-   pip install -r backend/requirements.txt
-   ```
-3. Configure the application:
-   - Set up the API endpoints for other applications in the `DataFetcher` class
-   - Configure the printer settings in the `LabelPrinter` class
+To contribute to the project:
 
-## Running the Application
+1. Create a feature branch
+2. Make your changes
+3. Run tests: `pytest backend/tests/`
+4. Submit a pull request
 
-```
-cd backend
-uvicorn app.main:app --reload
-```
+## Troubleshooting
 
-## Configuration
+For common issues, check:
 
-The application can be configured by modifying the following files:
-
-- `backend/app/services/data_fetcher.py`: Configure API endpoints for other applications
-- `backend/app/services/label_printer.py`: Configure printer settings
-- `backend/app/main.py`: Configure CORS settings
-
-## Dependencies
-
-- FastAPI: Web framework
-- Uvicorn: ASGI server
-- Pydantic: Data validation
-- HTTPX: HTTP client for fetching data from other applications
-- PyCUPS: CUPS client for printing
-- Python-Jose: JWT token handling
-- Passlib: Password hashing
-- Python-dotenv: Environment variable management 
+- Connection issues: Verify printer connectivity and network settings
+- Label printing problems: Check printer settings and label format
+- API errors: Check application logs for details 
