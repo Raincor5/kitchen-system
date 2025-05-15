@@ -61,6 +61,9 @@ bower_components/
 *.keystore
 credentials/
 secrets/
+ngrok.yml
+*.env.backup
+update_ngrok_urls.sh
 
 # Temp files
 *.swp
