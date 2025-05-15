@@ -1,0 +1,21 @@
+fastapi==0.109.2
+uvicorn==0.27.1
+pydantic==2.6.1
+pydantic-settings==2.1.0
+python-dotenv==1.0.1
+httpx==0.25.1
+python-multipart==0.0.6
+pycups==2.0.1
+python-jose==3.3.0
+passlib==1.7.4
+bcrypt==4.0.1
+opencv-python==4.9.0.80
+numpy==1.26.4
+aiohttp==3.11.18
+# Optional dependencies for text extraction
+# Uncomment to use Google Cloud Vision
+google-cloud-vision==3.5.0
+# Uncomment to use Tesseract OCR
+pytesseract==0.3.10 
+opencv-python
+inference-sdk

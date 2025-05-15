@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "../.."
+		},
+		{
+			"path": "../../../projects/prep-tracker"
+		},
+		{
+			"path": "../../../projects/upscaler"
+		},
+		{
+			"path": "../../../projects/ftt"
+		}
+	],
+	"settings": {
+		"java.configuration.updateBuildConfiguration": "disabled"
+	}
+}

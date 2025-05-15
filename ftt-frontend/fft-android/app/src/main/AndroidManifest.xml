@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.fft.kitchen">
+    <!-- Camera permission -->
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- Write to external storage (optional for saving images) -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!-- Printer service permissions -->
+    <uses-permission android:name="woyou.aidlservice.jiuiv5.IWoyouService" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+    <!-- Web server permissions -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Labels"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+        <activity android:name=".SplashActivity"
+            android:theme="@style/Theme.Labels.NoActionBar"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity"
+            android:theme="@style/Theme.Labels.Fullscreen"
+            android:exported="false">
+        </activity>
+        <activity android:name=".LabelManagerActivity"
+            android:theme="@style/Theme.Labels.Fullscreen"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".PrintTextActivity"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="woyou.aidlservice.jiuiv5.IWoyouService" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".PrinterSettingsActivity"
+            android:exported="false"
+            android:label="Printer Settings">
+        </activity>
+        <activity
+            android:name=".LabelConfigActivity"
+            android:exported="false"
+            android:label="Label Configuration"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".QRScannerActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+    </application>
+</manifest>

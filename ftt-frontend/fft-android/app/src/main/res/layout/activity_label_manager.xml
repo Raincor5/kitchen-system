@@ -1,0 +1,39 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Header with instructions -->
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#E0E0E0"
+        android:padding="16dp">
+        
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Saved Labels"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#263238"/>
+            
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tap a label to print it. Long press to delete."
+            android:textSize="14sp"
+            android:layout_marginTop="4dp"
+            android:textColor="#546E7A"/>
+    </LinearLayout>
+
+    <!-- RecyclerView for Saved Labels -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/savedLabelsRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/header"
+        android:padding="8dp"/>
+</RelativeLayout>
