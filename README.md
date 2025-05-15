@@ -29,6 +29,23 @@ The FTT system includes:
 
 ## Setup and Installation
 
+### Automated Setup
+
+For a quick start, run the setup script:
+
+```bash
+chmod +x setup.sh
+./setup.sh
+```
+
+This will:
+1. Check for required dependencies
+2. Set up Python virtual environments
+3. Install required packages
+4. Create configuration files from templates
+
+### Manual Setup
+
 Each component has its own setup instructions. Please refer to the individual README files in each directory:
 
 - [Kitchen Manager Setup](./kitchen-manager/README.md)
