@@ -45,6 +45,26 @@ if ! command_exists git; then
   exit 1
 fi
 
+# Check for Node.js
+if ! command_exists node; then
+  echo "Error: Node.js is not installed. Please install Node.js 16 or higher."
+  exit 1
+fi
+
+# Check Node.js version
+NODE_VERSION=$(node -v | cut -d 'v' -f 2 | cut -d '.' -f 1)
+echo "Node.js version: $NODE_VERSION"
+
+if [ "$NODE_VERSION" -lt 16 ]; then
+  echo "Warning: Node.js version is less than 16. Some components may not work correctly."
+fi
+
+# Check for npm
+if ! command_exists npm; then
+  echo "Error: npm is not installed. Please install npm."
+  exit 1
+fi
+
 # Set up kitchen-manager
 echo "Setting up kitchen-manager..."
 cd kitchen-manager || exit 1
@@ -101,8 +121,114 @@ fi
 # Return to root directory
 cd ../..
 
+# Set up prep-tracker
+echo "Setting up Prep Tracker..."
+
+cd prep-tracker || exit 1
+
+# Install npm dependencies
+if [ -f package.json ]; then
+  echo "Installing Prep Tracker dependencies..."
+  npm install --quiet
+else
+  echo "Warning: package.json not found for Prep Tracker."
+fi
+
+# Set up environment variables if they don't exist
+if [ ! -f .env ]; then
+  echo "Creating .env file from example..."
+  if [ -f .env.example ]; then
+    cp .env.example .env
+    echo "Please edit prep-tracker/.env with your configuration."
+  else
+    echo "Warning: .env.example not found. Creating empty .env file."
+    touch .env
+  fi
+fi
+
+# Return to root directory
+cd ..
+
+# Set up recipe-upscaler backend
+echo "Setting up Recipe Upscaler Backend..."
+
+cd recipe-upscaler/backend || exit 1
+
+# Install npm dependencies
+if [ -f package.json ]; then
+  echo "Installing Recipe Upscaler Backend dependencies..."
+  npm install --quiet
+else
+  echo "Warning: package.json not found for Recipe Upscaler Backend."
+fi
+
+# Set up environment variables if they don't exist
+if [ ! -f .env ]; then
+  echo "Creating .env file from example..."
+  if [ -f .env.example ]; then
+    cp .env.example .env
+    echo "Please edit recipe-upscaler/backend/.env with your configuration."
+  else
+    echo "Warning: .env.example not found. Creating empty .env file."
+    touch .env
+  fi
+fi
+
+# Return to root directory
+cd ../..
+
+# Set up recipe-upscaler calculator (web)
+echo "Setting up Recipe Upscaler Web App..."
+
+cd recipe-upscaler/calculator || exit 1
+
+# Install npm dependencies
+if [ -f package.json ]; then
+  echo "Installing Recipe Upscaler Web App dependencies..."
+  npm install --quiet
+else
+  echo "Warning: package.json not found for Recipe Upscaler Web App."
+fi
+
+# Return to root directory
+cd ../..
+
+# Set up recipe-upscaler calculator-cross (mobile)
+echo "Setting up Recipe Upscaler Mobile App..."
+
+cd recipe-upscaler/calculator-cross || exit 1
+
+# Install npm dependencies
+if [ -f package.json ]; then
+  echo "Installing Recipe Upscaler Mobile App dependencies..."
+  npm install --quiet
+else
+  echo "Warning: package.json not found for Recipe Upscaler Mobile App."
+fi
+
+# Set up environment variables if they don't exist
+if [ ! -f .env ]; then
+  echo "Creating .env file from example..."
+  if [ -f .env.example ]; then
+    cp .env.example .env
+    echo "Please edit recipe-upscaler/calculator-cross/.env with your configuration."
+  else
+    echo "Warning: .env.example not found. Creating empty .env file."
+    touch .env
+  fi
+fi
+
+# Return to root directory
+cd ../..
+
 echo "Setup complete! Please check the README.md files for further instructions."
 echo "Next steps:"
 echo "1. Configure your .env files with proper settings"
-echo "2. Run 'cd kitchen-manager && source venv/bin/activate && cd backend && python app/main.py' to start the backend"
-echo "3. Run 'cd ftt-frontend/fft-android && ./gradlew installDebug' to build and install the Android app" 
+echo "2. Start the backend services:"
+echo "   - Kitchen Manager: cd kitchen-manager && source venv/bin/activate && cd backend && python app/main.py"
+echo "   - Recipe Upscaler: cd recipe-upscaler/backend && node server.mjs"
+echo "3. Start the frontend applications:"
+echo "   - FFT Android: cd ftt-frontend/fft-android && ./gradlew installDebug"
+echo "   - Prep Tracker: cd prep-tracker && npx expo start"
+echo "   - Recipe Calculator Web: cd recipe-upscaler/calculator && npm start"
+echo "   - Recipe Calculator Mobile: cd recipe-upscaler/calculator-cross && npx expo start" 

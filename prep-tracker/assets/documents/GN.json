@@ -1,0 +1,435 @@
+[
+    {
+      "id": "gastronorm_2_1_20",
+      "name": "Gastronorm 2/1-20 Pan",
+      "dimensions": {
+        "length": 650,
+        "width": 530,
+        "depth": 20
+      },
+      "volumeLiters": 4.5,
+      "material": "Stainless Steel",
+      "description": "A large Gastronorm pan with a 20 mm depth."
+    },
+    {
+      "id": "gastronorm_2_3_20",
+      "name": "Gastronorm 2/3-20 Pan",
+      "dimensions": {
+        "length": 354,
+        "width": 325,
+        "depth": 20
+      },
+      "volumeLiters": 1.25,
+      "material": "Stainless Steel",
+      "description": "A small Gastronorm pan with a 20 mm depth."
+    },
+    {
+      "id": "gastronorm_2_3_40",
+      "name": "Gastronorm 2/3-40 Pan",
+      "dimensions": {
+        "length": 354,
+        "width": 325,
+        "depth": 40
+      },
+      "volumeLiters": 3.0,
+      "material": "Stainless Steel",
+      "description": "A medium Gastronorm pan with a 40 mm depth."
+    },
+    {
+      "id": "gastronorm_2_3_65",
+      "name": "Gastronorm 2/3-65 Pan",
+      "dimensions": {
+        "length": 354,
+        "width": 325,
+        "depth": 65
+      },
+      "volumeLiters": 5.25,
+      "material": "Stainless Steel",
+      "description": "A medium Gastronorm pan with a 65 mm depth."
+    },
+    {
+      "id": "gastronorm_2_3_100",
+      "name": "Gastronorm 2/3-100 Pan",
+      "dimensions": {
+        "length": 354,
+        "width": 325,
+        "depth": 100
+      },
+      "volumeLiters": 8.0,
+      "material": "Stainless Steel",
+      "description": "A large Gastronorm pan with a 100 mm depth."
+    },
+    {
+      "id": "gastronorm_2_3_150",
+      "name": "Gastronorm 2/3-150 Pan",
+      "dimensions": {
+        "length": 354,
+        "width": 325,
+        "depth": 150
+      },
+      "volumeLiters": 11.5,
+      "material": "Stainless Steel",
+      "description": "A high-capacity Gastronorm pan with a 150 mm depth."
+    },
+    {
+      "id": "gastronorm_1_1_20",
+      "name": "Gastronorm 1/1-20 Pan",
+      "dimensions": {
+        "length": 325,
+        "width": 265,
+        "depth": 20
+      },
+      "volumeLiters": 1.0,
+      "material": "Stainless Steel",
+      "description": "A standard Gastronorm pan with a 20 mm depth."
+    },
+    {
+      "id": "gastronorm_1_1_40",
+      "name": "Gastronorm 1/1-40 Pan",
+      "dimensions": {
+        "length": 325,
+        "width": 265,
+        "depth": 40
+      },
+      "volumeLiters": 2.5,
+      "material": "Stainless Steel",
+      "description": "A standard Gastronorm pan with a 40 mm depth."
+    },
+    {
+      "id": "gastronorm_1_1_65",
+      "name": "Gastronorm 1/1-65 Pan",
+      "dimensions": {
+        "length": 325,
+        "width": 265,
+        "depth": 65
+      },
+      "volumeLiters": 4.0,
+      "material": "Stainless Steel",
+      "description": "A standard Gastronorm pan with a 65 mm depth."
+    },
+    {
+      "id": "gastronorm_1_1_100",
+      "name": "Gastronorm 1/1-100 Pan",
+      "dimensions": {
+        "length": 530,
+        "width": 325,
+        "depth": 100
+      },
+      "volumeLiters": 12.6,
+      "material": "Stainless Steel",
+      "description": "A very large full-size Gastronorm pan with a 100 mm depth."
+    },
+    {
+      "id": "gastronorm_1_1_150",
+      "name": "Gastronorm 1/1-150 Pan",
+      "dimensions": {
+        "length": 530,
+        "width": 325,
+        "depth": 150
+      },
+      "volumeLiters": 18.0,
+      "material": "Stainless Steel",
+      "description": "A high-capacity full-size Gastronorm pan with a 150 mm depth."
+    },
+    {
+      "id": "gastronorm_1_1_200",
+      "name": "Gastronorm 1/1-200 Pan",
+      "dimensions": {
+        "length": 530,
+        "width": 325,
+        "depth": 200
+      },
+      "volumeLiters": 25.0,
+      "material": "Stainless Steel",
+      "description": "A very high-capacity full-size Gastronorm pan with a 200 mm depth."
+    },
+    {
+      "id": "gastronorm_1_2_20",
+      "name": "Gastronorm 1/2-20 Pan",
+      "dimensions": {
+        "length": 325,
+        "width": 176,
+        "depth": 20
+      },
+      "volumeLiters": 0.75,
+      "material": "Stainless Steel",
+      "description": "A half-size Gastronorm pan with a 20 mm depth."
+    },
+    {
+      "id": "gastronorm_1_2_40",
+      "name": "Gastronorm 1/2-40 Pan",
+      "dimensions": {
+        "length": 325,
+        "width": 176,
+        "depth": 40
+      },
+      "volumeLiters": 1.75,
+      "material": "Stainless Steel",
+      "description": "A half-size Gastronorm pan with a 40 mm depth."
+    },
+    {
+      "id": "gastronorm_1_2_65",
+      "name": "Gastronorm 1/2-65 Pan",
+      "dimensions": {
+        "length": 325,
+        "width": 176,
+        "depth": 65
+      },
+      "volumeLiters": 2.75,
+      "material": "Stainless Steel",
+      "description": "A half-size Gastronorm pan with a 65 mm depth."
+    },
+    {
+      "id": "gastronorm_1_2_100",
+      "name": "Gastronorm 1/2-100 Pan",
+      "dimensions": {
+        "length": 325,
+        "width": 265,
+        "depth": 100
+      },
+      "volumeLiters": 5.5,
+      "material": "Stainless Steel",
+      "description": "A high-capacity half-size Gastronorm pan with a 100 mm depth."
+    },
+    {
+      "id": "gastronorm_1_2_150",
+      "name": "Gastronorm 1/2-150 Pan",
+      "dimensions": {
+        "length": 325,
+        "width": 265,
+        "depth": 150
+      },
+      "volumeLiters": 8.5,
+      "material": "Stainless Steel",
+      "description": "A very high-capacity half-size Gastronorm pan with a 150 mm depth."
+    },
+    {
+      "id": "gastronorm_1_2_200",
+      "name": "Gastronorm 1/2-200 Pan",
+      "dimensions": {
+        "length": 325,
+        "width": 265,
+        "depth": 200
+      },
+      "volumeLiters": 11.0,
+      "material": "Stainless Steel",
+      "description": "A top-capacity half-size Gastronorm pan with a 200 mm depth."
+    },
+    {
+      "id": "gastronorm_1_3_20",
+      "name": "Gastronorm 1/3-20 Pan",
+      "dimensions": {
+        "length": 325,
+        "width": 117,
+        "depth": 20
+      },
+      "volumeLiters": 0.5,
+      "material": "Stainless Steel",
+      "description": "A third-size Gastronorm pan with a 20 mm depth."
+    },
+    {
+      "id": "gastronorm_1_3_40",
+      "name": "Gastronorm 1/3-40 Pan",
+      "dimensions": {
+        "length": 325,
+        "width": 117,
+        "depth": 40
+      },
+      "volumeLiters": 1.25,
+      "material": "Stainless Steel",
+      "description": "A third-size Gastronorm pan with a 40 mm depth."
+    },
+    {
+      "id": "gastronorm_1_3_65",
+      "name": "Gastronorm 1/3-65 Pan",
+      "dimensions": {
+        "length": 325,
+        "width": 117,
+        "depth": 65
+      },
+      "volumeLiters": 2.0,
+      "material": "Stainless Steel",
+      "description": "A third-size Gastronorm pan with a 65 mm depth."
+    },
+    {
+      "id": "gastronorm_1_4_20",
+      "name": "Gastronorm 1/4-20 Pan",
+      "dimensions": {
+        "length": 325,
+        "width": 88,
+        "depth": 20
+      },
+      "volumeLiters": 0.35,
+      "material": "Stainless Steel",
+      "description": "A quarter-size Gastronorm pan with a 20 mm depth."
+    },
+    {
+      "id": "gastronorm_1_4_40",
+      "name": "Gastronorm 1/4-40 Pan",
+      "dimensions": {
+        "length": 325,
+        "width": 88,
+        "depth": 40
+      },
+      "volumeLiters": 0.85,
+      "material": "Stainless Steel",
+      "description": "A quarter-size Gastronorm pan with a 40 mm depth."
+    },
+    {
+      "id": "gastronorm_1_4_65",
+      "name": "Gastronorm 1/4-65 Pan",
+      "dimensions": {
+        "length": 325,
+        "width": 88,
+        "depth": 65
+      },
+      "volumeLiters": 1.35,
+      "material": "Stainless Steel",
+      "description": "A quarter-size Gastronorm pan with a 65 mm depth."
+    },
+    {
+      "id": "gastronorm_1_6_20",
+      "name": "Gastronorm 1/6-20 Pan",
+      "dimensions": {
+        "length": 325,
+        "width": 59,
+        "depth": 20
+      },
+      "volumeLiters": 0.25,
+      "material": "Stainless Steel",
+      "description": "A sixth-size Gastronorm pan with a 20 mm depth."
+    },
+    {
+      "id": "gastronorm_1_6_40",
+      "name": "Gastronorm 1/6-40 Pan",
+      "dimensions": {
+        "length": 325,
+        "width": 59,
+        "depth": 40
+      },
+      "volumeLiters": 0.6,
+      "material": "Stainless Steel",
+      "description": "A sixth-size Gastronorm pan with a 40 mm depth."
+    },
+    {
+      "id": "gastronorm_1_6_65",
+      "name": "Gastronorm 1/6-65 Pan",
+      "dimensions": {
+        "length": 325,
+        "width": 59,
+        "depth": 65
+      },
+      "volumeLiters": 0.95,
+      "material": "Stainless Steel",
+      "description": "A sixth-size Gastronorm pan with a 65 mm depth."
+    },
+    {
+      "id": "gastronorm_1_9_20",
+      "name": "Gastronorm 1/9-20 Pan",
+      "dimensions": {
+        "length": 325,
+        "width": 39,
+        "depth": 20
+      },
+      "volumeLiters": 0.15,
+      "material": "Stainless Steel",
+      "description": "A ninth-size Gastronorm pan with a 20 mm depth."
+    },
+    {
+      "id": "gastronorm_1_9_40",
+      "name": "Gastronorm 1/9-40 Pan",
+      "dimensions": {
+        "length": 325,
+        "width": 39,
+        "depth": 40
+      },
+      "volumeLiters": 0.4,
+      "material": "Stainless Steel",
+      "description": "A ninth-size Gastronorm pan with a 40 mm depth."
+    },
+    {
+      "id": "gastronorm_1_9_65",
+      "name": "Gastronorm 1/9-65 Pan",
+      "dimensions": {
+        "length": 325,
+        "width": 39,
+        "depth": 65
+      },
+      "volumeLiters": 0.65,
+      "material": "Stainless Steel",
+      "description": "A ninth-size Gastronorm pan with a 65 mm depth."
+    },
+    {
+      "id": "gastronorm_2_4_65",
+      "name": "Gastronorm 2/4-65 Pan",
+      "dimensions": {
+        "length": 530,
+        "width": 162,
+        "depth": 65
+      },
+      "volumeLiters": 3.5,
+      "material": "Stainless Steel",
+      "description": "A wide, shallow two-quarter size Gastronorm pan with a 65 mm depth."
+    },
+    {
+      "id": "gastronorm_2_4_100",
+      "name": "Gastronorm 2/4-100 Pan",
+      "dimensions": {
+        "length": 530,
+        "width": 162,
+        "depth": 100
+      },
+      "volumeLiters": 5.5,
+      "material": "Stainless Steel",
+      "description": "A two-quarter size Gastronorm pan with a 100 mm depth."
+    },
+    {
+      "id": "gastronorm_1_6_100",
+      "name": "Gastronorm 1/6-100 Pan",
+      "dimensions": {
+        "length": 176,
+        "width": 162,
+        "depth": 100
+      },
+      "volumeLiters": 1.5,
+      "material": "Stainless Steel",
+      "description": "A moderate one-sixth size Gastronorm pan with a 100 mm depth."
+    },
+    {
+      "id": "gastronorm_1_6_150",
+      "name": "Gastronorm 1/6-150 Pan",
+      "dimensions": {
+        "length": 176,
+        "width": 162,
+        "depth": 150
+      },
+      "volumeLiters": 2.25,
+      "material": "Stainless Steel",
+      "description": "A high-capacity one-sixth size Gastronorm pan with a 150 mm depth."
+    },
+    {
+      "id": "gastronorm_1_6_200",
+      "name": "Gastronorm 1/6-200 Pan",
+      "dimensions": {
+        "length": 176,
+        "width": 162,
+        "depth": 200
+      },
+      "volumeLiters": 3.0,
+      "material": "Stainless Steel",
+      "description": "A very high-capacity one-sixth size Gastronorm pan with a 200 mm depth."
+    },
+    {
+      "id": "gastronorm_1_9_100",
+      "name": "Gastronorm 1/9-100 Pan",
+      "dimensions": {
+        "length": 176,
+        "width": 108,
+        "depth": 100
+      },
+      "volumeLiters": 0.8,
+      "material": "Stainless Steel",
+      "description": "A one-ninth size Gastronorm pan with a 100 mm depth."
+    }
+  ]
+  

@@ -1,0 +1,336 @@
+{
+  "ingredients": [
+    "Bean Sprouts",
+    "Bean sprouts",
+    "Beansprouts",
+    "Blanched Broccoli",
+    "Blanched Fine Beans",
+    "Bok Choi",
+    "Carrot",
+    "Chilli flakes",
+    "Chillies (dried)",
+    "Chillies (sliced)",
+    "Chillies Sliced",
+    "Chillies sliced",
+    "Chillies, Sliced",
+    "Cooked Prawns",
+    "Cooked Tteokbokki",
+    "Cooked prawns",
+    "Cooked sliced prawns",
+    "Cucumber moons",
+    "Edamame beans",
+    "Extra Butternut Squash for Veg Option",
+    "Garlic Paste",
+    "Garlic paste",
+    "Ginger (minced)",
+    "Ginger Chicken",
+    "Ginger Minced",
+    "Ginger minced",
+    "Green Pepper",
+    "Green Peppers",
+    "Green Peppers Teppan Cut",
+    "Green peppers teppan cut",
+    "Katsu pickle",
+    "Leeks",
+    "Mangetout",
+    "Mangetout Julienne",
+    "Mangetout Whole",
+    "Mangetout, Julienne",
+    "Mixed Mushrooms",
+    "Ramen Red Onion",
+    "Ramen red onions",
+    "Red Chilli Sliced",
+    "Red Onion",
+    "Red Onion Wok Cut",
+    "Red Onions",
+    "Red Onions Wok Cut",
+    "Red Pepper",
+    "Red Peppers",
+    "Red Peppers Teppan Cut",
+    "Red peppers teppan cut",
+    "Roasted Butternut Squash",
+    "Shiitake Mushrooms",
+    "Sliced apple",
+    "Spring Onion",
+    "Spring Onions",
+    "Sweet Potato",
+    "Sweetcorn",
+    "Teppan Red Peppers",
+    "Teppan White Mushrooms",
+    "White Mushrooms",
+    "White Onion",
+    "White Onions Teppan Cut",
+    "White onions teppan cut",
+    "Yaki Chicken",
+    "Yaki chicken",
+    "Yaki spring onions",
+    "blanched broccoli",
+    "blanched fine beans",
+    "carrot shredded",
+    "mangetout julienne",
+    "mangetout whole",
+    "mangetout-whole",
+    "red onion-wok cut",
+    "soaked garlic",
+    "sweetcorn",
+    "yaki spring onion"
+  ],
+  "similarityThreshold": 0.8,
+  "similarPairs": [
+    {
+      "name1": "Bean Sprouts",
+      "name2": "Bean sprouts",
+      "similarity": 1.0000001192092896
+    },
+    {
+      "name1": "Blanched Fine Beans",
+      "name2": "blanched fine beans",
+      "similarity": 1.0000001192092896
+    },
+    {
+      "name1": "Ginger Minced",
+      "name2": "Ginger minced",
+      "similarity": 1.0000001192092896
+    },
+    {
+      "name1": "Mangetout Julienne",
+      "name2": "mangetout julienne",
+      "similarity": 1.0000001192092896
+    },
+    {
+      "name1": "White Onions Teppan Cut",
+      "name2": "White onions teppan cut",
+      "similarity": 1.0000001192092896
+    },
+    {
+      "name1": "Yaki Chicken",
+      "name2": "Yaki chicken",
+      "similarity": 1.0000001192092896
+    },
+    {
+      "name1": "Chillies Sliced",
+      "name2": "Chillies sliced",
+      "similarity": 1.0
+    },
+    {
+      "name1": "Cooked Prawns",
+      "name2": "Cooked prawns",
+      "similarity": 1.0
+    },
+    {
+      "name1": "Sweetcorn",
+      "name2": "sweetcorn",
+      "similarity": 1.0
+    },
+    {
+      "name1": "Mangetout Whole",
+      "name2": "mangetout whole",
+      "similarity": 0.9999999403953552
+    },
+    {
+      "name1": "Red Peppers Teppan Cut",
+      "name2": "Red peppers teppan cut",
+      "similarity": 0.9999999403953552
+    },
+    {
+      "name1": "Blanched Broccoli",
+      "name2": "blanched broccoli",
+      "similarity": 0.9999998807907104
+    },
+    {
+      "name1": "Garlic Paste",
+      "name2": "Garlic paste",
+      "similarity": 0.9999998807907104
+    },
+    {
+      "name1": "Green Peppers Teppan Cut",
+      "name2": "Green peppers teppan cut",
+      "similarity": 0.9999998807907104
+    },
+    {
+      "name1": "Mangetout Julienne",
+      "name2": "Mangetout, Julienne",
+      "similarity": 0.9840763807296753
+    },
+    {
+      "name1": "Mangetout, Julienne",
+      "name2": "mangetout julienne",
+      "similarity": 0.9840763807296753
+    },
+    {
+      "name1": "Red Onion Wok Cut",
+      "name2": "Red Onions Wok Cut",
+      "similarity": 0.9731531143188477
+    },
+    {
+      "name1": "Chillies (sliced)",
+      "name2": "Chillies sliced",
+      "similarity": 0.9685928225517273
+    },
+    {
+      "name1": "Chillies (sliced)",
+      "name2": "Chillies Sliced",
+      "similarity": 0.9685927629470825
+    },
+    {
+      "name1": "Ramen Red Onion",
+      "name2": "Ramen red onions",
+      "similarity": 0.9658045172691345
+    },
+    {
+      "name1": "Yaki spring onions",
+      "name2": "yaki spring onion",
+      "similarity": 0.9656508564949036
+    },
+    {
+      "name1": "Chillies Sliced",
+      "name2": "Chillies, Sliced",
+      "similarity": 0.9616346955299377
+    },
+    {
+      "name1": "Chillies sliced",
+      "name2": "Chillies, Sliced",
+      "similarity": 0.9616346955299377
+    },
+    {
+      "name1": "Green Peppers Teppan Cut",
+      "name2": "Red Peppers Teppan Cut",
+      "similarity": 0.9523026943206787
+    },
+    {
+      "name1": "Green Peppers Teppan Cut",
+      "name2": "Red peppers teppan cut",
+      "similarity": 0.9523026943206787
+    },
+    {
+      "name1": "Green peppers teppan cut",
+      "name2": "Red Peppers Teppan Cut",
+      "similarity": 0.9523026943206787
+    },
+    {
+      "name1": "Green peppers teppan cut",
+      "name2": "Red peppers teppan cut",
+      "similarity": 0.9523026943206787
+    },
+    {
+      "name1": "Chillies (sliced)",
+      "name2": "Chillies, Sliced",
+      "similarity": 0.9506381750106812
+    },
+    {
+      "name1": "Ginger (minced)",
+      "name2": "Ginger Minced",
+      "similarity": 0.9474210143089294
+    },
+    {
+      "name1": "Ginger (minced)",
+      "name2": "Ginger minced",
+      "similarity": 0.9474210143089294
+    },
+    {
+      "name1": "Spring Onion",
+      "name2": "Spring Onions",
+      "similarity": 0.9454582333564758
+    },
+    {
+      "name1": "Cooked Prawns",
+      "name2": "Cooked sliced prawns",
+      "similarity": 0.9418386220932007
+    },
+    {
+      "name1": "Cooked prawns",
+      "name2": "Cooked sliced prawns",
+      "similarity": 0.9418386220932007
+    },
+    {
+      "name1": "Red Onion",
+      "name2": "Red Onions",
+      "similarity": 0.9352303743362427
+    },
+    {
+      "name1": "Red Onion Wok Cut",
+      "name2": "red onion-wok cut",
+      "similarity": 0.9165288209915161
+    },
+    {
+      "name1": "Red Onions Wok Cut",
+      "name2": "red onion-wok cut",
+      "similarity": 0.8932430744171143
+    },
+    {
+      "name1": "Mangetout Whole",
+      "name2": "mangetout-whole",
+      "similarity": 0.8906607627868652
+    },
+    {
+      "name1": "mangetout whole",
+      "name2": "mangetout-whole",
+      "similarity": 0.8906607031822205
+    },
+    {
+      "name1": "Mangetout",
+      "name2": "Mangetout Whole",
+      "similarity": 0.8729647397994995
+    },
+    {
+      "name1": "Mangetout",
+      "name2": "mangetout whole",
+      "similarity": 0.87296462059021
+    },
+    {
+      "name1": "Green Pepper",
+      "name2": "Green Peppers",
+      "similarity": 0.8650757074356079
+    },
+    {
+      "name1": "Green Peppers",
+      "name2": "Red Peppers",
+      "similarity": 0.8634432554244995
+    },
+    {
+      "name1": "Red Peppers",
+      "name2": "Teppan Red Peppers",
+      "similarity": 0.8300167322158813
+    },
+    {
+      "name1": "Teppan White Mushrooms",
+      "name2": "White Mushrooms",
+      "similarity": 0.8183864951133728
+    },
+    {
+      "name1": "Green Pepper",
+      "name2": "Red Pepper",
+      "similarity": 0.8177116513252258
+    },
+    {
+      "name1": "Red Onion",
+      "name2": "White Onion",
+      "similarity": 0.8144684433937073
+    },
+    {
+      "name1": "Red Peppers Teppan Cut",
+      "name2": "Teppan Red Peppers",
+      "similarity": 0.8090736865997314
+    },
+    {
+      "name1": "Red peppers teppan cut",
+      "name2": "Teppan Red Peppers",
+      "similarity": 0.8090736865997314
+    },
+    {
+      "name1": "Chillies sliced",
+      "name2": "Red Chilli Sliced",
+      "similarity": 0.8068052530288696
+    },
+    {
+      "name1": "Chillies Sliced",
+      "name2": "Red Chilli Sliced",
+      "similarity": 0.8068051338195801
+    },
+    {
+      "name1": "Carrot",
+      "name2": "carrot shredded",
+      "similarity": 0.8040340542793274
+    }
+  ]
+}
